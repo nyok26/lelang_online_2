@@ -85,7 +85,7 @@ include '../layouts/navbar_admin_petugas.php';
                     $harga_tertinggi = mysqli_query($koneksi, "select max(penawaran_harga) as penawaran_harga FROM history_lelang where id_lelang='$d_tb_lelang[id_lelang]'");
                     $harga_tertinggi = mysqli_fetch_array($harga_tertinggi);
                     $d_harga_tertinggi = $harga_tertinggi['penawaran_harga'];
-                    $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where id_lelang='$d_tb_lelang[id_lelang]'");
+                    $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where penawaran_harga='$harga_tertinggi[penawaran_harga]'");
                     $d_pemenang = mysqli_fetch_array($pemenang);
                     $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");
                     $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
