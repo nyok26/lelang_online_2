@@ -87,8 +87,17 @@ include '../layouts/navbar_admin_petugas.php';
                     $d_harga_tertinggi = $harga_tertinggi['penawaran_harga'];
                     $pemenang = mysqli_query($koneksi, "SELECT * FROM history_lelang where penawaran_harga='$harga_tertinggi[penawaran_harga]'");
                     $d_pemenang = mysqli_fetch_array($pemenang);
-                    $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");
-                    $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
+                    //$tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$d_pemenang[id_user]'");
+                    
+                    if (isset($d_pemenang) && isset($d_pemenang['id_user'])) {
+                      $id_user = $d_pemenang['id_user'];
+                      $tb_masyarakat = mysqli_query($koneksi, "SELECT * FROM tb_masyarakat where id_user='$id_user'");
+                      // continue processing the query result here
+                  } else {
+                      // display a message to inform the user that there is no winner for the auction or the winner data is not complete
+                      
+                  }
+                  $d_tb_masyarakat = mysqli_fetch_array($tb_masyarakat);
                     ?>
                     <tr>
                       <td><?php echo $no++; ?></td>
@@ -122,6 +131,7 @@ include '../layouts/navbar_admin_petugas.php';
                         <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-tutup<?php echo $d_tb_lelang['id_lelang'];?>">Tutup Lelang</button>
                       </td>
                     </tr>
+                    
                     <div class="modal fade" id="modal-buka<?php echo $d_tb_lelang['id_lelang'];?>">
                       <div class="modal-dialog">
                         <div class="modal-content">

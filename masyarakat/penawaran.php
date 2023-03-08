@@ -116,7 +116,7 @@ include '../layouts/navbar_masyarakat.php';
                     <th>#</th>
                     <th>Nama Barang</th>
                     <th>Harga Awal</th>
-                    <th>Tawaran Harga</th>
+                    <th>Tawaran Harga Anda</th>
                     <th>Status Lelang</th>
                     <th>Aksi</th>
                   </tr>

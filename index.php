@@ -30,31 +30,29 @@
         if(isset($_GET['info'])){
           if($_GET['info'] == "gagal"){ ?>
           <div class="alert alert-warning alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
             <h5><i class="icon fas fa-exclamation-triangle"></i> Mohon Maaf</h5>
             Login Gagal! username dan password salah!
           </div>
         <?php }else if($_GET['info'] == 'logout'){ ?>
           <div class="alert alert-success alert-dismissable">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
           <h5><i class="icon fas fa-thumbs-up"></i> Terima Kasih</h5>
             Anda Telah Berhasil Logout
           </div>
         <?php }else if($_GET['info'] == 'login'){ ?>
           <div class="alert alert-info alert-dismissable">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
           <h5><i class="icon fas fa-exclamation-triangle"></i> Mohon Maaf</h5>
             Anda Harus Login Terlebih Dahulu
           </div>
           <?php }else if($_GET['info'] == 'daftar'){ ?>
           <div class="alert alert-success alert-success">
-          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
           <h5><i class="icon fas fa-thumbs-up"></i> Terima Kasih</h5>
            Anda Berhasil Mendaftar Silahkan Login
           </div>
-        <?php } } 
-        
-        ?> 
+        <?php } } ?> 
         
        
         <form action="cek_login_masyarakat.php" method="post">
